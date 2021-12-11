@@ -7,6 +7,7 @@
 
 import UIKit
 import Charts
+import NCMB
 
 class FifthViewController: UIViewController {
 
@@ -20,36 +21,68 @@ class FifthViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // データを取得
+        let data = getData()
         //グラフを表示
-        displayChart(data: Data)
+        displayChart(data: data)
     }
     
-    func displayChart(data: [Double]) {
+    func getData() -> Dictionary<Date,Double> {
+        
+        var dataArray:Dictionary<Date,Double> = [:]
+        //testクラスを検索するNCMBQueryを作成
+        var query : NCMBQuery<NCMBObject> = NCMBQuery.getQuery(className: "results")
+        //fieldCが42と一致するデータを検索する条件を設定
+        query.where(field: "user_id", equalTo: 1)
+
+        // 検索を行う
+        query.findInBackground(callback: { result in
+            switch result {
+                case let .success(array):
+                    print("取得に成功しました 件数: \(array.count)")
+                    array.forEach {
+                        let data01 = $0 as! NCMBObject
+                        let date: Date? = data01["date"]
+                        let weight: Double? = data01["weight"]
+                        dataArray[date!] = weight!
+                    }
+                
+                case let .failure(error):
+                    print("取得に失敗しました: \(error)")
+            }
+        })
+        return dataArray
+    }
+    
+    func displayChart(data: Dictionary<Date,Double>) {
         // グラフの範囲を指定する
         chartView = LineChartView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: 400))
         // プロットデータ(y軸)を保持する配列
         var dataEntries = [ChartDataEntry]()
-        
-        for (xValue, yVlaue) in data.enumerated() {
-            let dataEntry = ChartDataEntry(x: Double(xValue), y: yVlaue)
-            dataEntries.append(dataEntry)
+
+        for (key, value) in data.enumerated() {
+            print("------")
+            print(key)
+            print(value)
+//            let dataEntry = ChartDataEntry(x: Date(key), y: Double(value))
+//            dataEntries.append(dataEntry)
         }
         // グラフにデータを適用
         chartDataSet = LineChartDataSet(entries: dataEntries, label: "DataChart")
-         
+
         chartView.data = LineChartData(dataSet: chartDataSet)
-        
+
         // X軸(xAxis)
         chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
-        
+
         // Y軸(leftAxis/rightAxis)
         chartView.leftAxis.axisMaximum = 100 //y左軸最大値
         chartView.leftAxis.axisMinimum = 0 // y左軸最小値
         chartView.leftAxis.labelCount = 10 // y軸ラベルの数
         chartView.rightAxis.enabled = false // 右側の縦軸ラベルを非表示
-        
+
         view.addSubview(chartView)
-        
+
     }
     
 
