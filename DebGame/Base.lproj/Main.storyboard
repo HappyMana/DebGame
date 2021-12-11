@@ -15,80 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCw-FY-ktp">
-                                <rect key="frame" x="0.0" y="56" width="414" height="0.0"/>
-                            </navigationBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="C0C0C0" translatesAutoresizingMaskIntoConstraints="NO" id="vlW-N1-xRb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デブゲーム" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdN-dF-pux">
-                                <rect key="frame" x="0.0" y="25" width="220" height="96"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ガリ" translatesAutoresizingMaskIntoConstraints="NO" id="7yN-Uc-7Ey">
-                                <rect key="frame" x="208" y="27" width="48" height="78"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あと50人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xvj-rl-ouZ">
-                                <rect key="frame" x="287" y="65" width="107" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0日連続クリア" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubB-P0-B8S">
-                                <rect key="frame" x="8" y="108" width="201" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="スーツ" translatesAutoresizingMaskIntoConstraints="NO" id="Cag-Ua-i1W">
-                                <rect key="frame" x="-151" y="152" width="741" height="807"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="807" id="IcU-oV-Mhk"/>
-                                    <constraint firstAttribute="width" constant="741" id="c4v-4t-pqg"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ゲームオーバーまで" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoD-jh-iUM">
-                                <rect key="frame" x="258" y="36" width="156" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="仮面" translatesAutoresizingMaskIntoConstraints="NO" id="1Xp-3y-GrP">
-                                <rect key="frame" x="20" y="65" width="374" height="466"/>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Cag-Ua-i1W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-151" id="07E-ae-WOI"/>
-                            <constraint firstItem="OdN-dF-pux" firstAttribute="firstBaseline" secondItem="LoD-jh-iUM" secondAttribute="firstBaseline" id="760-10-GeM"/>
-                            <constraint firstItem="LoD-jh-iUM" firstAttribute="leading" secondItem="7yN-Uc-7Ey" secondAttribute="trailing" constant="2" id="9ux-5t-cHA"/>
-                            <constraint firstItem="Cag-Ua-i1W" firstAttribute="top" secondItem="OdN-dF-pux" secondAttribute="bottom" constant="31" id="EQr-6h-SPX"/>
-                            <constraint firstItem="OdN-dF-pux" firstAttribute="leading" secondItem="eCw-FY-ktp" secondAttribute="leading" id="JyR-VY-pds"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Xp-3y-GrP" secondAttribute="bottom" constant="282" id="K3w-UZ-h9Q"/>
-                            <constraint firstItem="vlW-N1-xRb" firstAttribute="trailing" secondItem="eCw-FY-ktp" secondAttribute="trailing" id="MEj-Bn-rjA"/>
-                            <constraint firstItem="1Xp-3y-GrP" firstAttribute="top" secondItem="Xvj-rl-ouZ" secondAttribute="top" id="OM0-OF-cwC"/>
-                            <constraint firstItem="ubB-P0-B8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="P4v-tt-0iq"/>
-                            <constraint firstItem="LoD-jh-iUM" firstAttribute="leading" secondItem="OdN-dF-pux" secondAttribute="trailing" constant="38" id="PEC-H2-4Pe"/>
-                            <constraint firstItem="vlW-N1-xRb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="SUz-6P-jpN"/>
-                            <constraint firstItem="ubB-P0-B8S" firstAttribute="top" secondItem="vlW-N1-xRb" secondAttribute="bottom" constant="3" id="ahF-br-ivx"/>
-                            <constraint firstItem="eCw-FY-ktp" firstAttribute="centerX" secondItem="1Xp-3y-GrP" secondAttribute="centerX" id="bma-CW-lpl"/>
-                            <constraint firstItem="vlW-N1-xRb" firstAttribute="leading" secondItem="eCw-FY-ktp" secondAttribute="leading" id="c1m-by-O9E"/>
-                            <constraint firstItem="7yN-Uc-7Ey" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="208" id="f6i-Xr-S78"/>
-                            <constraint firstItem="1Xp-3y-GrP" firstAttribute="trailing" secondItem="Xvj-rl-ouZ" secondAttribute="trailing" id="jaZ-Zr-vC0"/>
-                            <constraint firstItem="Cag-Ua-i1W" firstAttribute="top" secondItem="Xvj-rl-ouZ" secondAttribute="bottom" constant="57" id="kFY-a8-u2g"/>
-                            <constraint firstItem="eCw-FY-ktp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="kil-8r-isy"/>
-                            <constraint firstItem="Xvj-rl-ouZ" firstAttribute="top" secondItem="eCw-FY-ktp" secondAttribute="bottom" constant="9" id="lO9-pZ-TZy"/>
-                            <constraint firstItem="LoD-jh-iUM" firstAttribute="trailing" secondItem="eCw-FY-ktp" secondAttribute="trailing" id="lzV-Qd-W5u"/>
-                            <constraint firstItem="Xvj-rl-ouZ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mpQ-V4-1PO"/>
-                            <constraint firstItem="Cag-Ua-i1W" firstAttribute="top" secondItem="7yN-Uc-7Ey" secondAttribute="bottom" constant="47" id="peU-Cw-yrb"/>
-                            <constraint firstItem="1Xp-3y-GrP" firstAttribute="top" secondItem="LoD-jh-iUM" secondAttribute="bottom" constant="8" id="qe1-Nt-IoP"/>
-                            <constraint firstItem="vlW-N1-xRb" firstAttribute="bottom" secondItem="7yN-Uc-7Ey" secondAttribute="bottom" id="sTN-11-JhS"/>
-                            <constraint firstItem="1Xp-3y-GrP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="yCH-fF-hWA"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="homekit" catalog="system" id="otm-52-tVw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -185,11 +113,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="C0C0C0" width="50" height="50"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <image name="ガリ" width="48" height="78"/>
-        <image name="スーツ" width="624" height="625"/>
-        <image name="仮面" width="1600" height="1200"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
