@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NCMB
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,104 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // APIキーの設定とSDK初期化
+        NCMB.initialize(applicationKey: "159acc172e44eec55b24c4b1410266713b87db1ecf65fe8833947fd13de14d96", clientKey: "e684e2fd10baf383bbffa90ec916c1860c3f8d4d714f6a837b205a16a861eae9")
+        
+        //クラスの作成
+        
+        //userクラス
+        let game_user : NCMBObject = NCMBObject(className: "game_user")
+        
+        game_user["user_id"] = ""
+        game_user["gender"] = true
+        game_user["birthday"] = Date()
+        game_user["height"] = 0.00
+        game_user["target_weight"] = 0.00
+        game_user["notification"] = true
+        game_user["life"] = 0
+        game_user["continue_clear_days_counter"] = 0
+        
+        game_user.saveInBackground(callback: { result in
+            switch result{
+                case .success:
+                    print("userの保存に成功しました")
+                case .failure(_):
+                    print("userの保存に失敗しました")
+            }
+        })
+        
+        //dishクラス
+        let dish : NCMBObject = NCMBObject(className: "dish")
+        
+        dish["user_id"] = ""
+        dish["date"] = Date()
+        dish["result"] = true
+        dish["weight"] = 0.00
+        
+        dish.saveInBackground(callback: { result in
+            switch result{
+                case .success:
+                    print("dishの保存に成功しました")
+                case .failure(_):
+                    print("dishの保存に失敗しました")
+            }
+        })
+        
+        //resultクラス
+        let results : NCMBObject = NCMBObject(className: "results")
+        
+        results["dish"] = ""
+        results["user"] = ""
+        results["date"] = Date()
+        results["time_zone"] = ""
+        results["dish_name"] = ""
+        results["calorie"] = 0
+        results["photo"] = ""
+        
+        results.saveInBackground(callback: { result in
+            switch result{
+                case .success:
+                    print("resultsの保存に成功しました")
+                case .failure(_):
+                    print("resultsの保存に失敗しました")
+            }
+        })
+        
+        
+        
+        //ログイン処理
+        
+        
+        //UUID取得
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+        NCMBUser.logInInBackground(userName: uuid!, password: uuid!, callback: { result in
+            switch result {
+                case .success:
+                    // ログインに成功した場合の処理
+                    print("ログインに成功しました")
+                case let .failure(error):
+                    // ログインに失敗した場合の処理
+                    print("ログインに失敗しました: \(error)")
+                    //初回の場合
+                    let user = NCMBUser()
+                
+                    user.userName = uuid
+                    user.password = uuid
+                
+                    user.signUpInBackground(callback: { result in
+                        switch result {
+                            case .success:
+                                print("新規登録に成功しました")
+                        case .failure(_):
+                                print("新規登録に失敗しました")
+                    }
+                })
+            }
+        })
+        
+        
         return true
     }
 
