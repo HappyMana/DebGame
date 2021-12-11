@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F4296ED2764620E00AFF81E /* SecondViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4296EC2764620E00AFF81E /* SecondViewController2.swift */; };
+		2F4296EF2764623E00AFF81E /* SecondViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4296EE2764623E00AFF81E /* SecondViewController3.swift */; };
+		2F4296F227647A4300AFF81E /* NCMB in Frameworks */ = {isa = PBXBuildFile; productRef = 2F4296F127647A4300AFF81E /* NCMB */; };
 		2FC4F8552762EDCC0090F9B3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4F8542762EDCC0090F9B3 /* SecondViewController.swift */; };
 		2FC4F8572762EE430090F9B3 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4F8562762EE430090F9B3 /* ThirdViewController.swift */; };
 		2FC4F8592762EEB60090F9B3 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC4F8582762EEB60090F9B3 /* FourthViewController.swift */; };
@@ -20,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F4296EC2764620E00AFF81E /* SecondViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController2.swift; sourceTree = "<group>"; };
+		2F4296EE2764623E00AFF81E /* SecondViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController3.swift; sourceTree = "<group>"; };
 		2FC4F8542762EDCC0090F9B3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2FC4F8562762EE430090F9B3 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		2FC4F8582762EEB60090F9B3 /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4296F227647A4300AFF81E /* NCMB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +78,8 @@
 				2FC4F8582762EEB60090F9B3 /* FourthViewController.swift */,
 				2FC4F85A2762EF2A0090F9B3 /* FifthViewController.swift */,
 				38A96DEA275CB46B00DA7300 /* Main.storyboard */,
+				2F4296EE2764623E00AFF81E /* SecondViewController3.swift */,
+				2F4296EC2764620E00AFF81E /* SecondViewController2.swift */,
 				38A96DED275CB47000DA7300 /* Assets.xcassets */,
 				38A96DEF275CB47000DA7300 /* LaunchScreen.storyboard */,
 				38A96DF2275CB47000DA7300 /* Info.plist */,
@@ -95,6 +103,9 @@
 			dependencies = (
 			);
 			name = DebGame;
+			packageProductDependencies = (
+				2F4296F127647A4300AFF81E /* NCMB */,
+			);
 			productName = DebGame;
 			productReference = 38A96DE1275CB46B00DA7300 /* DebGame.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +134,9 @@
 				Base,
 			);
 			mainGroup = 38A96DD8275CB46B00DA7300;
+			packageReferences = (
+				2F4296F027647A4300AFF81E /* XCRemoteSwiftPackageReference "ncmb_swift" */,
+			);
 			productRefGroup = 38A96DE2275CB46B00DA7300 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -153,6 +167,8 @@
 				2FC4F8592762EEB60090F9B3 /* FourthViewController.swift in Sources */,
 				2FC4F8552762EDCC0090F9B3 /* SecondViewController.swift in Sources */,
 				38A96DE9275CB46B00DA7300 /* ViewController.swift in Sources */,
+				2F4296EF2764623E00AFF81E /* SecondViewController3.swift in Sources */,
+				2F4296ED2764620E00AFF81E /* SecondViewController2.swift in Sources */,
 				2FC4F8572762EE430090F9B3 /* ThirdViewController.swift in Sources */,
 				38A96DE5275CB46B00DA7300 /* AppDelegate.swift in Sources */,
 				38A96DE7275CB46B00DA7300 /* SceneDelegate.swift in Sources */,
@@ -376,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2F4296F027647A4300AFF81E /* XCRemoteSwiftPackageReference "ncmb_swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NIFCLOUD-mbaas/ncmb_swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2F4296F127647A4300AFF81E /* NCMB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F4296F027647A4300AFF81E /* XCRemoteSwiftPackageReference "ncmb_swift" */;
+			productName = NCMB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38A96DD9275CB46B00DA7300 /* Project object */;
 }

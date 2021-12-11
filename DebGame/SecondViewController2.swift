@@ -1,13 +1,13 @@
 //
-//  SecondViewController.swift
+//  SecondViewController2.swift
 //  DebGame
 //
-//  Created by 伊藤祐哉 on 2021/12/10.
+//  Created by 伊藤祐哉 on 2021/12/11.
 //
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,14 +15,18 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func nextButton(_ sender: Any) {
-        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondView2") as! SecondViewController2
+    @IBAction func foodAddButton(_ sender: Any) {
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "SecondView3") as! SecondViewController3
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: true, completion: nil)
         
-        print("食べたもの一覧画面に遷移しました")
+        print("食べたもの追加画面に遷移しました")
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        print("今日の画面に戻りました")
+    }
     /*
     // MARK: - Navigation
 
