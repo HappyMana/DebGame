@@ -45,10 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //dishクラス
         let dish : NCMBObject = NCMBObject(className: "dish")
         
-        dish["user_id"] = ""
+        dish["dish"] = ""
+        dish["user"] = ""
         dish["date"] = Date()
-        dish["result"] = true
-        dish["weight"] = 0.00
+        dish["time_zone"] = ""
+        dish["dish_name"] = ""
+        dish["calorie"] = 0
+        dish["photo"] = ""
         
         dish.saveInBackground(callback: { result in
             switch result{
@@ -62,13 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //resultクラス
         let results : NCMBObject = NCMBObject(className: "results")
         
-        results["dish"] = ""
-        results["user"] = ""
+        results["user_id"] = ""
         results["date"] = Date()
-        results["time_zone"] = ""
-        results["dish_name"] = ""
-        results["calorie"] = 0
-        results["photo"] = ""
+        results["result"] = true
+        results["weight"] = 0.00
         
         results.saveInBackground(callback: { result in
             switch result{
@@ -78,40 +78,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("resultsの保存に失敗しました")
             }
         })
-        
-        
-        
-        //ログイン処理
-        
-        
-        //UUID取得
-        let uuid = UIDevice.current.identifierForVendor?.uuidString
-        
-        NCMBUser.logInInBackground(userName: uuid!, password: uuid!, callback: { result in
-            switch result {
-                case .success:
-                    // ログインに成功した場合の処理
-                    print("ログインに成功しました")
-                case let .failure(error):
-                    // ログインに失敗した場合の処理
-                    print("ログインに失敗しました: \(error)")
-                    //初回の場合
-                    let user = NCMBUser()
-                
-                    user.userName = uuid
-                    user.password = uuid
-                
-                    user.signUpInBackground(callback: { result in
-                        switch result {
-                            case .success:
-                                print("新規登録に成功しました")
-                        case .failure(_):
-                                print("新規登録に失敗しました")
-                    }
-                })
-            }
-        })
-        
         
         return true
     }

@@ -20,6 +20,7 @@
 		38A96DEC275CB46B00DA7300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A96DEA275CB46B00DA7300 /* Main.storyboard */; };
 		38A96DEE275CB47000DA7300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A96DED275CB47000DA7300 /* Assets.xcassets */; };
 		38A96DF1275CB47000DA7300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38A96DEF275CB47000DA7300 /* LaunchScreen.storyboard */; };
+		5BB3200287CBA1276EC3EB67 /* Pods_DebGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC7D928BDAE8F43080FBE8 /* Pods_DebGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,9 @@
 		38A96DED275CB47000DA7300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38A96DF0275CB47000DA7300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38A96DF2275CB47000DA7300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AF9B4CFFF9E2A470BBC4719 /* Pods-DebGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebGame.release.xcconfig"; path = "Target Support Files/Pods-DebGame/Pods-DebGame.release.xcconfig"; sourceTree = "<group>"; };
+		88FC7D928BDAE8F43080FBE8 /* Pods_DebGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DebGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA65EF50F7D2F809672B0975 /* Pods-DebGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DebGame.debug.xcconfig"; path = "Target Support Files/Pods-DebGame/Pods-DebGame.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F4296F227647A4300AFF81E /* NCMB in Frameworks */,
+				5BB3200287CBA1276EC3EB67 /* Pods_DebGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				38A96DE3275CB46B00DA7300 /* DebGame */,
 				38A96DE2275CB46B00DA7300 /* Products */,
+				D328CDDAD5A7B8C212230A20 /* Pods */,
+				390E106061C5E544436717C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +94,24 @@
 			path = DebGame;
 			sourceTree = "<group>";
 		};
+		390E106061C5E544436717C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88FC7D928BDAE8F43080FBE8 /* Pods_DebGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D328CDDAD5A7B8C212230A20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BA65EF50F7D2F809672B0975 /* Pods-DebGame.debug.xcconfig */,
+				6AF9B4CFFF9E2A470BBC4719 /* Pods-DebGame.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -94,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38A96DF5275CB47000DA7300 /* Build configuration list for PBXNativeTarget "DebGame" */;
 			buildPhases = (
+				6B42CC2C4D97CBB0F13A93A2 /* [CP] Check Pods Manifest.lock */,
 				38A96DDD275CB46B00DA7300 /* Sources */,
 				38A96DDE275CB46B00DA7300 /* Frameworks */,
 				38A96DDF275CB46B00DA7300 /* Resources */,
+				38D518F07ADC0354A5E4A5BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,6 +185,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38D518F07ADC0354A5E4A5BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebGame/Pods-DebGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DebGame/Pods-DebGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DebGame/Pods-DebGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B42CC2C4D97CBB0F13A93A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DebGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		38A96DDD275CB46B00DA7300 /* Sources */ = {
@@ -316,6 +385,7 @@
 		};
 		38A96DF6275CB47000DA7300 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA65EF50F7D2F809672B0975 /* Pods-DebGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -344,6 +414,7 @@
 		};
 		38A96DF7275CB47000DA7300 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AF9B4CFFF9E2A470BBC4719 /* Pods-DebGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
