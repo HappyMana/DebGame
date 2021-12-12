@@ -32,10 +32,10 @@ class FifthViewController: UIViewController {
         }
          
         var Data = [getData]()
-    
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
         //testクラスを検索するNCMBQueryを作成
         var query : NCMBQuery<NCMBObject> = NCMBQuery.getQuery(className: "results")
-        query.where(field: "user_id", equalTo: 1)
+        query.where(field: "user_id", equalTo: uuid)
 
         // 検索を行う
         query.findInBackground(callback: { result in

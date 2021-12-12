@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NCMB
 
 class ViewController: UIViewController {
     
@@ -23,10 +24,10 @@ class ViewController: UIViewController {
         headerBgImage.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 100)
         self.view.addSubview(headerBgImage)
         
-        // デスゲームの表示
+        // デブゲームの表示
         let title = UILabel()
         title.frame = CGRect(x:10, y:50, width:200, height:30)
-        title.text = "デスゲーム"
+        title.text = "デブゲーム"
         title.font = UIFont.systemFont(ofSize: 30)
         self.view.addSubview(title)
         
@@ -52,9 +53,10 @@ class ViewController: UIViewController {
         self.view.addSubview(lifeText)
         
         // ×日連続クリア中の表示
+        var clearDayNum = 0
         let clearDayText = UILabel()
         clearDayText.frame = CGRect(x:10, y:110, width:300, height:30)
-        clearDayText.text = "0日連続クリア中"
+        clearDayText.text = "\(clearDayNum)日連続クリア中"
         clearDayText.font = UIFont.systemFont(ofSize: 35)
         self.view.addSubview(clearDayText)
         
@@ -82,13 +84,39 @@ class ViewController: UIViewController {
         
         // メッセージの表示
         let messageName = UILabel()
-        messageName.frame = CGRect(x:60, y:550, width:300, height:100)
-        messageName.text = "必要な摂取カロリーを摂取してください"
+        messageName.frame = CGRect(x:60, y:450, width:300, height:300)
+        
+        var sumCalories: Int = 0
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        // クエリの作成
+        var query : NCMBQuery<NCMBObject> = NCMBQuery.getQuery(className: "dish")
+        query.where(field: "user_id", equalTo: uuid)
+        query.findInBackground(callback: { result in
+            switch result {
+                case let .success(array):
+                    print("取得に成功しました 件数: \(array.count)")
+                    array.forEach {
+                        let data01 = $0 as! NCMBObject
+                        let getCalorie: Int? = data01["calorie"]
+                        sumCalories += getCalorie!
+                        print(sumCalories)
+                    }
+                    if (2200 - sumCalories > 0) {
+                        messageName.text = "残り\(2200 - sumCalories)kcalです。必要な摂取カロリーを摂取してください"
+                        clearDayNum = 1
+                    } else {
+                        messageName.text = "おめでとうございます！\(sumCalories)kcal摂取し、クリアです！"
+                    }
+                case let .failure(error):
+                    print("取得に失敗しました: \(error)")
+            }
+        })
         messageName.numberOfLines = 4
         messageName.textColor = UIColor.white
         messageName.textAlignment = NSTextAlignment.center
         messageName.font = UIFont.systemFont(ofSize: 30)
         self.view.addSubview(messageName)
+        
     }
     
     override func didReceiveMemoryWarning() {
