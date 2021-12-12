@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-894.20289855072474" y="-1660.0446428571429"/>
         </scene>
-        <!--Item-->
+        <!--入力する-->
         <scene sceneID="GlK-uD-daa">
             <objects>
                 <viewController id="8Lk-lI-2Ri" customClass="SecondViewController" customModule="DebGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -35,7 +35,7 @@
                         <viewLayoutGuide key="safeArea" id="1kZ-Xh-RU2"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="eyT-di-Jgg"/>
+                    <tabBarItem key="tabBarItem" title="入力する" image="pencil" catalog="system" id="eyT-di-Jgg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="roM-bZ-Wvw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,7 +73,7 @@
             </objects>
             <point key="canvasLocation" x="-880" y="481"/>
         </scene>
-        <!--Item-->
+        <!--体重をみる-->
         <scene sceneID="Nvj-VN-Ofo">
             <objects>
                 <viewController id="47z-Hh-nTn" customClass="FifthViewController" customModule="DebGame" customModuleProvider="target" sceneMemberID="viewController">
@@ -83,7 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="zJb-SC-BmX"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Z4E-od-5i0"/>
+                    <tabBarItem key="tabBarItem" title="体重をみる" image="chart.xyaxis.line" catalog="system" id="Z4E-od-5i0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N25-Sa-U72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,7 +143,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
+        <image name="pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

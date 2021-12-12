@@ -47,14 +47,14 @@ class ViewController: UIViewController {
         // あと○日テキストの表示
         let lifeText = UILabel()
         lifeText.frame = CGRect(x:300, y:65, width:200, height:30)
-        lifeText.text = "あと○日"
+        lifeText.text = "あと50人"
         lifeText.font = UIFont.systemFont(ofSize: 25)
         self.view.addSubview(lifeText)
         
         // ×日連続クリア中の表示
         let clearDayText = UILabel()
         clearDayText.frame = CGRect(x:10, y:110, width:300, height:30)
-        clearDayText.text = "×日連続クリア中"
+        clearDayText.text = "0日連続クリア中"
         clearDayText.font = UIFont.systemFont(ofSize: 35)
         self.view.addSubview(clearDayText)
         
