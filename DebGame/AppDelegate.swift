@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let dish : NCMBObject = NCMBObject(className: "dish")
         
         dish["dish"] = ""
-        dish["user"] = ""
+        dish["user_id"] = ""
         dish["date"] = Date()
         dish["time_zone"] = ""
         dish["dish_name"] = ""
@@ -77,6 +77,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .failure(_):
                     print("resultsの保存に失敗しました")
             }
+        })
+        
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        
+            NCMBUser.logInInBackground(userName: uuid!, password: uuid!, callback: { result in
+                switch result {
+                    case .success:
+                        // ログインに成功した場合の処理
+                        print("ログインに成功しました")
+                    case let .failure(error):
+                        // ログインに失敗した場合の処理
+                        print("ログインに失敗しました: (error)")
+                        //初回の場合
+                        let user = NCMBUser()
+
+                        user.userName = uuid
+                        user.password = uuid
+
+                        user.signUpInBackground(callback: { result in
+                switch result {
+                    case .success:
+                        print("新規登録に成功しました")
+                    case .failure(_):
+                        print("新規登録に失敗しました")
+                }
+            })
+        }
         })
         
         return true
