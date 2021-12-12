@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import NCMB
 
 class SecondViewController: UIViewController {
+    
+    var weightTextB:String? = ""
+    var weightTextC:String? = ""
+    var weightTextD:String? = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +34,14 @@ class SecondViewController: UIViewController {
         weightText.keyboardType = .decimalPad
         weightText.borderStyle = .roundedRect
         self.view.addSubview(weightText)
+        weightText.addTarget(self, action: #selector(textFieldChange), for: .editingChanged)
+        
         
         //体重追加ぼたん
         let weightButton = UIButton()
         
         weightButton.frame = CGRect(x: 330, y: 300 , width: 100, height: 30)
-        weightButton.addTarget(self, action: #selector(self.weightButton(_:)), for: UIControl.Event.touchUpInside)
+        weightButton.addTarget(self, action: #selector(weightButton( _:)), for: UIControl.Event.touchUpInside)
         weightButton.backgroundColor = UIColor.black
         weightButton.setTitle("決定", for: UIControl.State.normal)
         self.view.addSubview(weightButton)
@@ -52,9 +59,10 @@ class SecondViewController: UIViewController {
         let dishNameText = UITextField()
         dishNameText.frame = CGRect(x: 0, y: 400, width: UIScreen.main.bounds.size.width, height: 40)
         dishNameText.placeholder = "料理名を入力してください"
-        dishNameText.keyboardType = .decimalPad
+        dishNameText.keyboardType = .default
         dishNameText.borderStyle = .roundedRect
         self.view.addSubview(dishNameText)
+        dishNameText.addTarget(self, action: #selector(textFieldChange2), for: .editingChanged)
         
         
         //カロリー入力テキスト
@@ -64,6 +72,7 @@ class SecondViewController: UIViewController {
         calText.keyboardType = .decimalPad
         calText.borderStyle = .roundedRect
         self.view.addSubview(calText)
+        calText.addTarget(self, action: #selector(textFieldChange3), for: .editingChanged)
         
         
         //追加ぼたん
@@ -96,13 +105,61 @@ class SecondViewController: UIViewController {
     
     //食べたもの追加
     @objc func addButton(_ sender: UIButton){
+        let dish : NCMBObject = NCMBObject(className: "dish")
         
-            print("ブラウザボタンがタップされました。")
+    
+        
+        dish["dish_name"] = weightTextC
+        dish["calorie"] = weightTextD
+        
+        dish.saveInBackground(callback: { result in
+            switch result{
+                case .success:
+                    print("dishの保存に成功しました")
+                case .failure(_):
+                    print("dishの保存に失敗しました")
+            }
+        })
+            print("食べたもの追加ボタンが押されました")
     }
     
+    
+    @objc func textFieldChange( _ sender: UITextField){
+        weightTextB = sender.text
+    }
+    @objc func textFieldChange2( _ sender: UITextField){
+        weightTextC = sender.text
+    }
+    @objc func textFieldChange3( _ sender: UITextField){
+        weightTextD = sender.text
+    }
+    
+    
     //体重追加
-    @objc func weightButton(_ sender: UIButton){
-        
+    @objc func weightButton( _ sender :UIButton){
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+                
+        guard let text = weightTextB else {return}
+        let dNum: Double = NSString(string: text).doubleValue
+                
+                //resultクラス
+                let results : NCMBObject = NCMBObject(className: "results")
+                
+                results["user_id"] = uuid
+                results["date"] = Date()
+                results["result"] = true
+                results["weight"] = dNum
+                
+                results.saveInBackground(callback: { result in
+                    switch result{
+                        case .success:
+                            print("resultsの保存に成功しました")
+                        case .failure(_):
+                            print("resultsの保存に失敗しました")
+                    }
+                })
+                    weightTextB = ""
+
             print("ブラウザボタンがタップされました。")
     }
         
