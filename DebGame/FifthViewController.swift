@@ -19,7 +19,8 @@ class FifthViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        
+        view.backgroundColor = UIColor.black
+
         struct getData {
             var date: Date
             var weight: Double
@@ -65,19 +66,25 @@ class FifthViewController: UIViewController {
 
                     // X軸(xAxis)
                     self.chartView.xAxis.labelPosition = .bottom // x軸ラベルをグラフの下に表示する
-                let formatter = ChartFormatter(date:Data.map{$0.date})
+                    let formatter = ChartFormatter(date:Data.map{$0.date})
                     self.chartView.xAxis.valueFormatter = formatter
                         //labelCountはChartDataEntryと同じ数だけ入れます。
                     self.chartView.xAxis.labelCount = 12
                         //granularityは1.0で固定
                     self.chartView.xAxis.granularity = 1.0
-
+                    self.chartView.xAxis.axisLineColor = UIColor.white
+                    self.chartView.xAxis.labelTextColor = UIColor.white
+                
                     // Y軸(leftAxis/rightAxis)
                     self.chartView.leftAxis.axisMaximum = 100 //y左軸最大値
                     self.chartView.leftAxis.axisMinimum = 0 // y左軸最小値
                     self.chartView.leftAxis.labelCount = 10 // y軸ラベルの数
                     self.chartView.rightAxis.enabled = false // 右側の縦軸ラベルを非表示
-
+                    let ll = ChartLimitLine(limit: 80, label: "目標")
+                    self.chartView.rightAxis.addLimitLine(ll)
+                    self.chartView.leftAxis.zeroLineColor = UIColor.white
+                    self.chartView.leftAxis.axisLineColor = UIColor.white
+                    self.chartView.leftAxis.labelTextColor = UIColor.white
                     self.view.addSubview(self.chartView)
                 
                     
