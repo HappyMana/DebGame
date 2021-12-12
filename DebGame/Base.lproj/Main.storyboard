@@ -32,17 +32,6 @@
                     <view key="view" contentMode="scaleToFill" id="nlr-2z-I1p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrK-Vs-pKX">
-                                <rect key="frame" x="218" y="573" width="146" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="食べたもの一覧"/>
-                                <connections>
-                                    <action selector="nextButton:" destination="8Lk-lI-2Ri" eventType="touchUpInside" id="WhF-mI-5XC"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1kZ-Xh-RU2"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                     </view>
@@ -129,26 +118,6 @@
                     <view key="view" contentMode="scaleToFill" id="FQa-L2-PA7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ke-cT-US7">
-                                <rect key="frame" x="227" y="567" width="125" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="プラス"/>
-                                <connections>
-                                    <action selector="foodAddButton:" destination="NOv-uM-JlR" eventType="touchUpInside" id="jRG-3D-Yl8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bO2-GK-60N">
-                                <rect key="frame" x="34" y="72" width="53" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="戻る"/>
-                                <connections>
-                                    <action selector="backButton:" destination="NOv-uM-JlR" eventType="touchUpInside" id="nxd-1m-VGI"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sN7-wG-AFK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -164,17 +133,6 @@
                     <view key="view" contentMode="scaleToFill" id="pkT-ff-UE5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-J5-a8s">
-                                <rect key="frame" x="27" y="44" width="53" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="戻る"/>
-                                <connections>
-                                    <action selector="backButton:" destination="BnP-kd-lez" eventType="touchUpInside" id="tc5-4p-scM"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Xaf-2x-oDB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
