@@ -107,8 +107,8 @@ class SecondViewController: UIViewController {
     @objc func addButton(_ sender: UIButton){
         let dish : NCMBObject = NCMBObject(className: "dish")
         
-    
-        
+        let uuid = UIDevice.current.identifierForVendor?.uuidString
+        dish["user_id"] = uuid
         dish["dish_name"] = weightTextC
         dish["calorie"] = weightTextD
         
